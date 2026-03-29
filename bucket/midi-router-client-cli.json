@@ -10,11 +10,11 @@
 
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-2.25.0-win64.zip",
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-$version-win64.zip",
             "hash": "57c619143ad961e3bc4bdae410af73f56a071a8903310908f1ccf7920f785fc6"
         },
         "arm64": {
-            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-2.25.0-win64-ARM.zip",
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-$version-win64-ARM.zip",
             "hash": "56b1b5633864f155f8dd50e173e77edef371c3c0c28a4dd356b76a5f3f836bec"
         }
     },

@@ -59,7 +59,7 @@ scoop install midi-router-client
 ```
 
 ## **MidiRouterClient CLI / Windows Service**  
-*(requires administrator privileges)*
+*(`sudo` will prompt for administrator privileges)*
 
 ```
 scoop install midi-router-client-cli

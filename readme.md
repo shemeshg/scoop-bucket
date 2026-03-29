@@ -63,8 +63,13 @@ After installation, start the service from an elevated shell:
 sc start MidiRouterClientCli
 ```
 
-> ⚠️ Service app folder is: `C:\Windows\System32\config\systemprofile\AppData` unlike 
-`c:\users\myUser\AppData`
+⚠️ **Service AppData folder:**  
+Windows services do **not** use your user’s AppData folder (`C:\Users\myUser\AppData`).  
+A service running as **LocalSystem** stores its AppData here:
+
+```
+C:\Windows\System32\config\systemprofile\AppData
+```
 
 ### Pass-Simple
 

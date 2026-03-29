@@ -24,12 +24,12 @@
 
     "uninstaller": {
         "script": [
-            "Start-Process \"$dir\\MidiRouterClient\\uninstall.exe\" \"/S\" -Wait"
+            "Start-Process \"$dir\\uninstall.exe\" \"/S\" -Wait"
         ]
     },
 
     "bin": [
-        "MidiRouterClient\\MidiRouterClient.exe"
+        "MidiRouterClient.exe"
     ],
 
     "autoupdate": {

@@ -17,13 +17,13 @@
     },
 
     "pre_install": [
+        "Get-ChildItem \"$dir\" -Recurse | Unblock-File",
         "sc.exe stop MidiRouterCli 2>$null",
         "sc.exe delete MidiRouterCli 2>$null"
     ],
 
     "post_install": [
-        "sc.exe create MidiRouterCli binPath= \"$dir\\*\\bin\\midi-router-client-cli.exe\" start= auto",
-        "sc.exe start MidiRouterCli"
+        "sc.exe create MidiRouterCli binPath= \"$dir\\*\\bin\\midi-router-client-cli.exe\" obj= \"NT AUTHORITY\\LocalService\" start= demand"
     ],
 
     "pre_uninstall": [

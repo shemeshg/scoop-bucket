@@ -1,6 +1,6 @@
 {
     "version": "2.25.0",
-    "description": "MidiRouterClient – MIDI routing utility",
+    "description": "MidiRouterClient – MIDI routing app",
     "homepage": "https://github.com/shemeshg/MidiRouterClient",
     "license": "MIT",
     "depends": "vcredist2022",

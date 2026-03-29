@@ -24,7 +24,7 @@
 
     "post_install": [
         "$exe = Get-ChildItem \"$dir\\*\\bin\\midi-router-client-cli.exe\" | Select-Object -First 1",
-        "sc.exe create MidiRouterClientCli binPath= \"$($exe.FullName)\" obj= \"NT AUTHORITY\\LocalService\" start= demand"
+        "sc.exe create MidiRouterClientCli binPath= \"$($exe.FullName)\" obj= \"LocalSystem\" start= demand"
     ],
 
     "pre_uninstall": [

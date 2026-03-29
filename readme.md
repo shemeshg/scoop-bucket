@@ -63,13 +63,33 @@ After installation, start the service from an elevated shell:
 sc start MidiRouterClientCli
 ```
 
-⚠️ **Service AppData folder:**  
-Windows services do **not** use your user’s AppData folder (`C:\Users\myUser\AppData`).  
-A service running as **LocalSystem** stores its AppData here:
+## ⚠️ Windows Service Configuration Files (Important)
+
+Windows services **do not** use the same AppData folder as your logged‑in user.  
+This means the application and the background service each store their settings in **different locations**.
+
+### **Normal application (when you run the GUI or CLI manually)**  
+Your personal settings are stored in:
 
 ```
-C:\Windows\System32\config\systemprofile\AppData
+C:\Users\<YourUser>\AppData\Roaming\shemeshg\MidiRouterClient.ini
 ```
+
+### **Windows service (running as LocalSystem)**  
+The service runs under the **system account**, not your user account.  
+Its AppData folder is located here:
+
+```
+C:\Windows\System32\config\systemprofile\AppData\Roaming\shemeshg\MidiRouterClient.ini
+```
+
+This is the configuration file the **service** uses — for example, the port number it listens on.
+
+### 📌 Why this matters  
+- Changing the **user** INI file does *not* affect the service.  
+- Changing the **service** INI file does *not* affect your user app.  
+- If you want the service to use the same settings as your user app, you must copy or edit the service’s INI file in the systemprofile directory.
+
 
 ### Pass-Simple
 

@@ -3,6 +3,7 @@
     "description": "MidiRouterClient – MIDI routing utility",
     "homepage": "https://github.com/shemeshg/MidiRouterClient",
     "license": "MIT",
+    "depends": "vcredist2022",
 
     "architecture": {
         "64bit": {
@@ -23,9 +24,22 @@
 
     "uninstaller": {
         "script": [
-            "Start-Process \"$dir\\uninstall.exe\" \"/S\" -Wait"
+            "Start-Process \"$dir\\*\\uninstall.exe\" \"/S\" -Wait"
         ]
     },
 
-    "bin": "bin\\midi-router-client.exe"
+    "bin": [
+        "*\\bin\\midi-router-client.exe"
+    ],
+
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-$version-win64.exe"
+            },
+            "arm64": {
+                "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-$version-win64-ARM.exe"
+            }
+        }
+    }
 }

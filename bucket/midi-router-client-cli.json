@@ -1,0 +1,34 @@
+{
+    "version": "2.25.0",
+    "description": "MidiRouterClient CLI – headless MIDI routing service",
+    "homepage": "https://github.com/shemeshg/MidiRouterClient",
+    "license": "MIT",
+
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-2.25.0-win64.zip",
+            "hash": "57c619143ad961e3bc4bdae410af73f56a071a8903310908f1ccf7920f785fc6"
+        },
+        "arm64": {
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-2.25.0-win64-ARM.zip",
+            "hash": "56b1b5633864f155f8dd50e173e77edef371c3c0c28a4dd356b76a5f3f836bec"
+        }
+    },
+
+    "pre_install": [
+        "sc.exe stop MidiRouterCli 2>$null",
+        "sc.exe delete MidiRouterCli 2>$null"
+    ],
+
+    "post_install": [
+        "sc.exe create MidiRouterCli binPath= \"$dir\\bin\\midi-router-client-cli.exe\" start= auto",
+        "sc.exe start MidiRouterCli"
+    ],
+
+    "pre_uninstall": [
+        "sc.exe stop MidiRouterCli 2>$null",
+        "sc.exe delete MidiRouterCli 2>$null"
+    ],
+
+    "bin": "bin\\midi-router-client-cli.exe"
+}

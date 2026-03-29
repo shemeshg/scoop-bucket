@@ -29,7 +29,7 @@
     },
 
     "bin": [
-        "bin\\MidiRouterClient.exe"
+        "bin\\midi-router-client.exe"
     ],
 
     "autoupdate": {

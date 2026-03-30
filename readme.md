@@ -57,13 +57,24 @@ scoop install midi-router-client
 ```
 
 ## **MidiRouterClient CLI / Windows Service**  
-*(`sudo` will prompt for administrator privileges)*
+
+run as administrator 
 
 ```
 scoop install -g midi-router-client-cli
 ```
 
-After installation, start the service from an elevated shell:
+keep updated with
+
+```
+# as user
+scoop update *
+
+# as admin
+scoop update -g *
+```
+
+After installation, it is possible to start the service from an elevated shell:
 
 ```
 sc start MidiRouterClientCli

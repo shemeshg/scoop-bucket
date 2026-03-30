@@ -7,27 +7,24 @@
 
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/pass-simple/pass-simple-1.0.25-win64.exe",
-            "hash": "3303689191918F9FB6AFC780FDF033157BD3A061A37689E52CF6C135E39289F9"
+            "url": "https://downloads.sourceforge.net/pass-simple/pass-simple-1.0.25-win64.zip",
+            "hash": "631c6e0dd05b21ae527e1b905b2d16721e817ae7ba0f99ca48abfdcf617ccf00"
         },
         "arm64": {
-            "url": "https://downloads.sourceforge.net/pass-simple/pass-simple-1.0.25-win64-ARM.exe",
-            "hash": "F35A181811AD5EAA303568E8910104BBC0CA9FE8B59970F5AA36BFCD332AE9D3"
+            "url": "https://downloads.sourceforge.net/pass-simple/pass-simple-1.0.25-win64-ARM.zip",
+            "hash": "f518ed885a33e17681366968708a091783e0ab618af8a644d46607ef7916394b"
         }
     },
 
-    "installer": {
-        "script": [
-            "Start-Process \"$dir\\$fname\" \"/S /D=$dir\" -Wait"
+    "extract_dir": "pass-simple-1.0.25-win64",
+    "shortcuts": [
+        [
+            "bin\\pass-simple.exe",
+            "pass-simplet",
+            "",
+            "bin\\icon.ico"
         ]
-    },
-
-    "uninstaller": {
-        "script": [
-            "Start-Process \"$dir\\Uninstall.exe\" \"/S\" -Wait"
-        ]
-    },
-
+    ],
     "bin": [
         "bin\\pass-simple.exe"
     ],

@@ -1,6 +1,4 @@
-# 🚫 Status
-
-This Scoop bucket is **not ready for general use** yet.
+# Scoop bucket
 
 Before installing anything from this bucket, you **must remove any existing WinGet installations** of these apps:
 

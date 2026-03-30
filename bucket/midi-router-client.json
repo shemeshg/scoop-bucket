@@ -1,5 +1,5 @@
 {
-    "version": "2.25.0",
+    "version": "2.26.0",
     "description": "MidiRouterClient – MIDI routing app",
     "homepage": "https://github.com/shemeshg/MidiRouterClient",
     "license": "MIT",
@@ -7,16 +7,16 @@
 
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.25.0-win64.zip",
-            "hash": "8b005f31b8477954d3b260b34b51fdbe9dcb9c28d26234ae8c5bfd74eaaed580"
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.26.0-win64.zip",
+            "hash": "5077b29f42972be7c6a424fe346eb723db6e307119cb10dc8db7a1192b5439eb"
         },
         "arm64": {
-            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.25.0-win64-ARM.zip",
-            "hash": "ba3d0c8a24d4d4a45000586755e4954264c12fc655d7e73108cee38ea16fcd1d"
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.26.0-win64-ARM.zip",
+            "hash": "fbaaa08f7d9565a88ab375198c7911f83d0337a95ac38cf9d1f1e0d380b395d8"
         }
     },
 
-    "extract_dir": "midi-router-client-2.25.0-win64",
+    "extract_dir": "midi-router-client-2.26.0-win64",
     "shortcuts": [
         [
             "bin\\midi-router-client.exe",

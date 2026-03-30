@@ -62,7 +62,7 @@ scoop install midi-router-client
 *(`sudo` will prompt for administrator privileges)*
 
 ```
-scoop install midi-router-client-cli
+scoop install -g midi-router-client-cli
 ```
 
 After installation, start the service from an elevated shell:

@@ -93,6 +93,7 @@ Its configuration file is stored here:
 
 ```
 C:\Windows\System32\config\systemprofile\AppData\Roaming\shemeshg\MidiRouterClient.ini
+C:\Windows\System32\config\systemprofile\AppData\Local\midiRouterClient.json
 ```
 
 This is the file the **service** reads — for example, to determine which port to listen on.

@@ -1,0 +1,45 @@
+{
+    "version": "2.25.0",
+    "description": "MidiRouterClient – MIDI routing app",
+    "homepage": "https://github.com/shemeshg/MidiRouterClient",
+    "license": "MIT",
+    "depends": "vcredist2022",
+
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.25.0-win64.exe",
+            "hash": "a4e8b3b3832cc0c3314e97f93d8f79b02c48080d2a2768899d6fcc1a9f6bd178"
+        },
+        "arm64": {
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.25.0-win64-ARM.exe",
+            "hash": "609f261af4d75b4ebe7bedb97936ff275bfc12efb3f369fc2959f5a44f4147b3"
+        }
+    },
+
+    "installer": {
+        "script": [
+            "Start-Process \"$dir\\$fname\" \"/S /D=$dir\" -Wait"
+        ]
+    },
+
+    "uninstaller": {
+        "script": [
+            "Start-Process \"$dir\\Uninstall.exe\" \"/S\" -Wait"
+        ]
+    },
+
+    "bin": [
+        "bin\\midi-router-client.exe"
+    ],
+
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-$version-win64.exe"
+            },
+            "arm64": {
+                "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-$version-win64-ARM.exe"
+            }
+        }
+    }
+}

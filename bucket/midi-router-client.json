@@ -15,13 +15,16 @@
             "hash": "ba3d0c8a24d4d4a45000586755e4954264c12fc655d7e73108cee38ea16fcd1d"
         }
     },
+
+    "extract_dir": "midi-router-client-2.25.0-win64",
     "shortcuts": [
         [
-            "*\\bin\\midi-router-client.exe"
+            "bin\\midi-router-client.exe",
+            "midi-router-client"
         ]
     ],
     "bin": [
-        "*\\bin\\midi-router-client.exe"
+        "bin\\midi-router-client.exe"
     ],
 
     "autoupdate": {

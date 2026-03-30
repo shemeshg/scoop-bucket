@@ -4,7 +4,8 @@
     "homepage": "https://github.com/shemeshg/MidiRouterClient",
     "license": "MIT",
     "depends": [
-        "vcredist2022"
+        "vcredist2022",
+        "sudo"
     ],
 
     "architecture": {
@@ -19,21 +20,19 @@
     },
 
     "pre_install": [
-        "if (!$global) { error 'This app MUST be installed globally. Use: scoop install -g <manifest>'; break }",
-        "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { error 'Elevation required. Run PowerShell as Administrator.'; break }",     
         "Get-ChildItem \"$dir\" -Recurse | Unblock-File",
-        "sc.exe stop MidiRouterClientCli 2>$null",
-        "sc.exe delete MidiRouterClientCli 2>$null"
+        "sudo sc.exe stop MidiRouterClientCli 2>$null",
+        "sudo sc.exe delete MidiRouterClientCli 2>$null"
     ],
 
     "post_install": [
         "$exe = Get-ChildItem \"$dir\\*\\bin\\midi-router-client-cli.exe\" | Select-Object -First 1",
-        "sc.exe create MidiRouterClientCli binPath= \"$($exe.FullName)\" obj= \"LocalSystem\" start= demand"
+        "sudo sc.exe create MidiRouterClientCli binPath= \"$($exe.FullName)\" obj= \"LocalSystem\" start= demand"
     ],
 
     "pre_uninstall": [
-        "sc.exe stop MidiRouterClientCli 2>$null",
-        "sc.exe delete MidiRouterClientCli 2>$null"
+        "sudo sc.exe stop MidiRouterClientCli 2>$null",
+        "sudo sc.exe delete MidiRouterClientCli 2>$null"
     ],
 
     "bin": [

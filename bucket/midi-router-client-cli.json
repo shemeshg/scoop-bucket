@@ -26,7 +26,7 @@
         "$svc = Get-Service MidiRouterClientCli -ErrorAction SilentlyContinue",
         "if ($svc) { sc.exe stop MidiRouterClientCli 2>$null }"
     ],
-        "post_install": [
+    "post_install": [
         "$exe = Get-ChildItem \"$dir\\*\\bin\\midi-router-client-cli.exe\" | Select-Object -First 1",
     
         "$svc = Get-WmiObject Win32_Service -Filter \"Name='MidiRouterClientCli'\" -ErrorAction SilentlyContinue",

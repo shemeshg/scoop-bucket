@@ -20,15 +20,19 @@
 
     "pre_install": [
         "if (!$global) { error 'This app MUST be installed globally. Use: scoop install -g <manifest>'; break }",
-        "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { error 'Elevation required. Run PowerShell as Administrator.'; break }",     
+        "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { error 'Elevation required. Run PowerShell as Administrator.'; break }",
         "Get-ChildItem \"$dir\" -Recurse | Unblock-File",
-        "sc.exe stop MidiRouterClientCli 2>$null",
-        "sc.exe delete MidiRouterClientCli 2>$null"
+    
+        "$svc = Get-Service MidiRouterClientCli -ErrorAction SilentlyContinue",
+        "if ($svc) { sc.exe stop MidiRouterClientCli 2>$null }"
     ],
-
-    "post_install": [
+        "post_install": [
         "$exe = Get-ChildItem \"$dir\\*\\bin\\midi-router-client-cli.exe\" | Select-Object -First 1",
-        "sc.exe create MidiRouterClientCli binPath= \"$($exe.FullName)\" obj= \"LocalSystem\" start= demand"
+    
+        "$svc = Get-WmiObject Win32_Service -Filter \"Name='MidiRouterClientCli'\" -ErrorAction SilentlyContinue",
+        "if ($svc -and ($svc.PathName -ne $exe.FullName)) { sc.exe delete MidiRouterClientCli 2>$null }",
+    
+        "if (-not $svc -or ($svc.PathName -ne $exe.FullName)) { sc.exe create MidiRouterClientCli binPath= \"$($exe.FullName)\" obj= \"LocalSystem\" start= demand }"
     ],
 
     "pre_uninstall": [

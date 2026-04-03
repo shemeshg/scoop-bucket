@@ -1,6 +1,6 @@
 {
     "version": "2.26.0",
-    "description": "MidiRouterClient CLI – headless Midi Router Client service",
+    "description": "MidiRouterClient CLI - headless Midi Router Client service",
     "homepage": "https://github.com/shemeshg/MidiRouterClient",
     "license": "MIT",
 
@@ -20,31 +20,17 @@
     },
 
     "pre_install": [
-        // Must be global
         "if (!$global) { error 'This app MUST be installed globally. Use: scoop install -g <manifest>'; break }",
-
-        // Must be admin
         "if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { error 'Elevation required. Run PowerShell as Administrator.'; break }",
-
-        // Unblock files
         "Get-ChildItem \"$dir\" -Recurse | Unblock-File",
-
-        // Stop service only if it exists
         "$svc = Get-Service MidiRouterClientCli -ErrorAction SilentlyContinue",
         "if ($svc) { sc.exe stop MidiRouterClientCli 2>$null }"
     ],
 
     "post_install": [
-        // Locate executable
         "$exe = Get-ChildItem \"$dir\\*\\bin\\midi-router-client-cli.exe\" | Select-Object -First 1",
-
-        // Check existing service
         "$svc = Get-WmiObject Win32_Service -Filter \"Name='MidiRouterClientCli'\" -ErrorAction SilentlyContinue",
-
-        // Delete service only if it exists AND points to a different executable
         "if ($svc -and ($svc.PathName -ne $exe.FullName)) { sc.exe delete MidiRouterClientCli 2>$null }",
-
-        // Create service if missing or replaced
         "if (-not $svc -or ($svc.PathName -ne $exe.FullName)) { sc.exe create MidiRouterClientCli binPath= \"$($exe.FullName)\" obj= \"LocalSystem\" start= demand }"
     ],
 

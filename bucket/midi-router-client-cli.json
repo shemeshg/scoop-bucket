@@ -1,5 +1,5 @@
 {
-    "version": "2.26.0",
+    "version": "2.27.0",
     "description": "MidiRouterClient CLI - headless Midi Router Client service",
     "homepage": "https://github.com/shemeshg/MidiRouterClient",
     "license": "MIT",
@@ -10,12 +10,12 @@
 
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-2.26.0-win64.zip",
-            "hash": "186c4913d3290ecdcf1caf61440104dd69bb939da8c59215b69c4fcc0e9a3cb4"
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-2.27.0-win64.zip",
+            "hash": "ff01a83b692837ff438ff5612071536a31a4ee6057bbfb61861fc0c1589555dd"
         },
         "arm64": {
-            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-2.26.0-win64-ARM.zip",
-            "hash": "c3d536af750e20f61720ed395bf929ff6226e3f245e0948b9abd40c1c0df5a35"
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-cli-2.27.0-win64-ARM.zip",
+            "hash": "bffe7c2bf32b1d82c3c2e3389f9d6a99f8ec38d0dd0c118af1634c4f0df46968"
         }
     },
 

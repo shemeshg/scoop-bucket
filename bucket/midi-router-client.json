@@ -7,16 +7,16 @@
 
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.31.0-win64.zip",
-            "hash": "616935fa476e8a41a07614f5b3b167c914bcae2872d2f71da1bbe99fa6770bf7"
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.33.0-win64.zip",
+            "hash": "3fc981325729196f2e2c0d415a761180271b96458323de96d0f369b9f79c0622"
         },
         "arm64": {
-            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.31.0-win64-ARM.zip",
-            "hash": "6b0b02ddde72912c8717681b2d33b204fb512b2928768a030170e892e2c86014"
+            "url": "https://downloads.sourceforge.net/midi-router-client/midi-router-client-2.33.0-win64-ARM.zip",
+            "hash": "1771412595cf4dee2b670096ab64146766fe36469fb6a88a451b4dcf81927f57"
         }
     },
 
-    "extract_dir": "midi-router-client-2.31.0-win64",
+    "extract_dir": "midi-router-client-2.33.0-win64",
     "shortcuts": [
         [
             "bin\\midi-router-client.exe",
